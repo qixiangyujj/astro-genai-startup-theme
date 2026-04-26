@@ -58,13 +58,17 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <Button size="lg" className="group">
-              Get Started Free
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button size="lg" variant="outline">
-              View Demo
-            </Button>
+            <a href="/contact">
+              <Button size="lg" className="group w-full sm:w-auto">
+                Get Started Free
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </a>
+            <a href="/#features">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto">
+                View Demo
+              </Button>
+            </a>
           </motion.div>
 
           {/* Stats */}
