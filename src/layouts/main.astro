@@ -14,6 +14,23 @@ const { title = "Polyhedrontech - Your Ultimate Family AI Solution" } = Astro.pr
 		<meta name="description" content="A modern, free Astro theme template for Polyhedrontech startups with dark/light mode toggle" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>{title}</title>
+		<!-- Google Translate Widget -->
+		<div id="google_translate_element" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;"></div>
+
+		<script type="text/javascript">
+		function googleTranslateElementInit() {
+			new google.translate.TranslateElement(
+			{
+				pageLanguage: 'en', // 網站預設語言
+				includedLanguages: 'en,zh-CN,zh-TW', // 限制只顯示英文、簡體中文、繁體中文
+				layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+			}, 
+			'google_translate_element'
+			);
+		}
+		</script>
+		<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+		<!-- End Google Translate Widget -->
 	</head>
 	<body>
 		<Header client:load />
