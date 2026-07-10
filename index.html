@@ -356,6 +356,55 @@
       color: var(--ink);
     }
 
+    /* ---------- Video demos ---------- */
+    .video-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 56px;
+    }
+    @media (max-width: 820px) { .video-grid { grid-template-columns: 1fr; } }
+    .video-card {
+      margin: 0;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--bg);
+      transition: transform var(--fast), border-color var(--fast), box-shadow var(--fast);
+    }
+    .video-card:hover {
+      transform: translateY(-2px);
+      border-color: #d6d6dd;
+      box-shadow: 0 6px 24px -12px rgba(11,11,15,.18);
+    }
+    .video-wrap {
+      position: relative;
+      padding-top: 56.25%; /* 16:9 aspect ratio */
+      border-radius: 10px;
+      overflow: hidden;
+      background: #000;
+    }
+    .video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .video-card figcaption {
+      margin-top: 16px;
+      font-size: 14px;
+      color: var(--ink-2);
+      line-height: 1.55;
+    }
+    .video-card figcaption strong {
+      display: block;
+      color: var(--ink);
+      font-size: 15px;
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+
     /* ---------- Contact form ---------- */
     .contact-form {
       margin-top: 48px;
@@ -469,6 +518,7 @@
         <a href="#product">Product</a>
         <a href="#use-cases">Use cases</a>
         <a href="#technology">Technology</a>
+        <a href="#demos">Demos</a>
         <a href="#about">About</a>
         <a class="nav-cta" href="#contact">Book a pilot</a>
       </nav>
@@ -626,6 +676,52 @@
           The result: privacy stays intact (no cloud round-trip), latency stays low
           (inference sits next to the data), and power stays within edge budgets.
         </p>
+      </div>
+    </section>
+
+    <!-- ============== DEMOS ============== -->
+    <section class="block" id="demos">
+      <div class="container">
+        <span class="section-eyebrow">See it in action</span>
+        <h2 class="section-title">Demos.</h2>
+        <p class="section-lede">
+          Two short clips — the first benchmarks our runtime against general-purpose edge boards;
+          the second shows the appliance driving a robot arm inside a real lab.
+        </p>
+
+        <div class="video-grid">
+          <figure class="video-card reveal">
+            <div class="video-wrap">
+              <iframe
+                src="https://player.vimeo.com/video/1207658474?title=0&byline=0&portrait=0"
+                title="Polyhedrontech performance comparison"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                referrerpolicy="strict-origin-when-cross-origin"
+                loading="lazy"
+                allowfullscreen></iframe>
+            </div>
+            <figcaption>
+              <strong>Performance comparison.</strong>
+              Polyhedrontech vs. general-purpose edge boards — same models, same hardware envelope, measured throughput and setup time.
+            </figcaption>
+          </figure>
+
+          <figure class="video-card reveal">
+            <div class="video-wrap">
+              <iframe
+                src="https://player.vimeo.com/video/1208735324?title=0&byline=0&portrait=0"
+                title="Robot arm running VLA models locally"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                referrerpolicy="strict-origin-when-cross-origin"
+                loading="lazy"
+                allowfullscreen></iframe>
+            </div>
+            <figcaption>
+              <strong>Robot arm &mdash; Lianbao lab.</strong>
+              VLA models running locally on a robot arm. No cloud round-trip, agentic AI at edge latency.
+            </figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
